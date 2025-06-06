@@ -2,6 +2,7 @@ rootProject.name = "Storytale-Sample-App"
 
 pluginManagement {
     repositories {
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
         google {
             content { 
               	includeGroupByRegex("com\\.android.*")
@@ -17,6 +18,7 @@ pluginManagement {
 
 dependencyResolutionManagement {
     repositories {
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
         google {
             content { 
               	includeGroupByRegex("com\\.android.*")
