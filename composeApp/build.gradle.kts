@@ -1,6 +1,6 @@
 import org.jetbrains.compose.ExperimentalComposeLibrary
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
-import org.jetbrains.compose.reload.ComposeHotRun
+//import org.jetbrains.compose.reload.ComposeHotRun
 import org.jetbrains.kotlin.compose.compiler.gradle.ComposeFeatureFlag
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSetTree
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
@@ -10,7 +10,8 @@ plugins {
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.compose)
     alias(libs.plugins.android.application)
-    alias(libs.plugins.hotReload)
+    // kotlin のバージョンと合わせる都合で compose hot reload は使用できない
+//    alias(libs.plugins.hotReload)
     alias(libs.plugins.storytale)
 }
 
@@ -131,7 +132,8 @@ compose.desktop {
 //https://github.com/JetBrains/compose-hot-reload
 composeCompiler {
     featureFlags.add(ComposeFeatureFlag.OptimizeNonSkippingGroups)
+//    generateFunctionKeyMetaClasses = true
 }
-tasks.withType<ComposeHotRun>().configureEach {
-    mainClass.set("MainKt")
-}
+//tasks.withType<ComposeHotRun>().configureEach {
+//    mainClass.set("MainKt")
+//}
